@@ -1,12 +1,14 @@
+import { MainLayout } from '@/component/layout';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { NextPageWithLayout } from '@/models/common';
 import styles from '../styles/Home.module.css';
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
 	const router = useRouter();
 
 	function goToDetailPage() {
@@ -38,7 +40,7 @@ const Home: NextPage = () => {
 
 				<div style={{ marginTop: '2000px' }}></div>
 
-				<Link href={'about'}>
+				<Link href={'/about'}>
 					<a>Go to About</a>
 				</Link>
 
@@ -86,4 +88,5 @@ const Home: NextPage = () => {
 	);
 };
 
+Home.Layout = MainLayout;
 export default Home;

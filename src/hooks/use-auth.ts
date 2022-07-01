@@ -1,6 +1,7 @@
-import { authApi } from 'apis'
+import { authApi } from '@/apis'
 import useSWR from 'swr'
 import { PublicConfiguration } from 'swr/dist/types'
+import { IUserInfo } from '@/models/index'
 
 export function useAuth(options?: Partial<PublicConfiguration>) {
 	const {
@@ -13,6 +14,8 @@ export function useAuth(options?: Partial<PublicConfiguration>) {
 		...options,
 	})
 
+	const firstLoading = profile === undefined && error === undefined
+
 	async function login() {
 		await authApi.login({
 			username: 'nghiepbv2',
@@ -24,13 +27,14 @@ export function useAuth(options?: Partial<PublicConfiguration>) {
 
 	async function logout() {
 		await authApi.logout()
-		mutate({}, false)
+		mutate({} || null, false)
 	}
 
 	return {
-		profile,
+		profile: profile as IUserInfo,
 		error,
 		login,
 		logout,
+		firstLoading,
 	}
 }

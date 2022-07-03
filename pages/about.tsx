@@ -2,9 +2,12 @@ import { AdminLayout, MainLayout } from '@/component/layout'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import { Box, Typography } from '@mui/material'
-import { GifBox } from '@mui/icons-material'
-const Header = dynamic(() => import('@/component/common/header'), { ssr: true })
+import { Box, Button, Typography } from '@mui/material'
+import { Header } from '@/component/common'
+
+// const DynamicHeader = dynamic(() => import('@/component/common').then((m) => m.Header), {
+// 	ssr: true,
+// })
 
 export interface IAboutPageProps {}
 
@@ -40,10 +43,14 @@ export default function AboutPage(props: IAboutPageProps) {
 	}
 
 	return (
-		<Box>
+		<Box sx={{ bgcolor: 'primary.light' }} color="text.primary">
 			<Typography component="h1" variant="h3" color="primary.main">
 				About Page
 			</Typography>
+
+			<Button variant="contained" color="success" sx={{ p: 2 }}>
+				Testing
+			</Button>
 			<Header />
 			<ul className="post-list">
 				{postList.map((post: any) => (

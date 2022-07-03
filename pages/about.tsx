@@ -12,64 +12,66 @@ import { Header } from '@/component/common'
 export interface IAboutPageProps {}
 
 export default function AboutPage(props: IAboutPageProps) {
-	const [postList, setPostList] = useState([])
-	const router = useRouter()
+  const [postList, setPostList] = useState([])
+  const router = useRouter()
 
-	console.log('About query: ', router.query)
+  console.log('About query: ', router.query)
 
-	const page = router.query?.page
+  const page = router.query?.page
 
-	useEffect(() => {
-		if (!page) return
-		;(async () => {
-			const response = await fetch(`https://js-post-api.herokuapp.com/api/posts?_page=${page}`)
-			const data = await response.json()
+  useEffect(() => {
+    if (!page) return
+    ;(async () => {
+      const response = await fetch(
+        `https://js-post-api.herokuapp.com/api/posts?_page=${page}`,
+      )
+      const data = await response.json()
 
-			setPostList(data.data)
-		})()
-	}, [page])
+      setPostList(data.data)
+    })()
+  }, [page])
 
-	const handleNextClick = () => {
-		router.push(
-			{
-				pathname: '/about',
-				query: {
-					page: (Number(page) || 1) + 1,
-				},
-			},
-			undefined,
-			{ shallow: true }
-		)
-	}
+  const handleNextClick = () => {
+    router.push(
+      {
+        pathname: '/about',
+        query: {
+          page: (Number(page) || 1) + 1,
+        },
+      },
+      undefined,
+      { shallow: true },
+    )
+  }
 
-	return (
-		<Box sx={{ bgcolor: 'primary.light' }} color="text.primary">
-			<Typography component="h1" variant="h3" color="primary.main">
-				About Page
-			</Typography>
+  return (
+    <Box sx={{ bgcolor: 'primary.light' }} color="text.primary">
+      <Typography component="h1" variant="h3" color="primary.main">
+        About Page
+      </Typography>
 
-			<Button variant="contained" color="success" sx={{ p: 2 }}>
-				Testing
-			</Button>
-			<Header />
-			<ul className="post-list">
-				{postList.map((post: any) => (
-					<li key={post.id}>{post.title}</li>
-				))}
-			</ul>
+      <Button variant="contained" color="success" sx={{ p: 2 }}>
+        Testing
+      </Button>
+      <Header />
+      <ul className="post-list">
+        {postList.map((post: any) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
 
-			<button onClick={handleNextClick}>Next Page</button>
-		</Box>
-	)
+      <button onClick={handleNextClick}>Next Page</button>
+    </Box>
+  )
 }
 
 AboutPage.Layout = AdminLayout
 
 export const getStaticProps = async () => {
-	console.log('getStaticProps')
-	return {
-		props: {},
-	}
+  console.log('getStaticProps')
+  return {
+    props: {},
+  }
 }
 
 // export async function getServerSideProps() {

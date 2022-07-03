@@ -4,37 +4,37 @@ import { PublicConfiguration } from 'swr/dist/types'
 import { IUserInfo } from '@/models/index'
 
 export function useAuth(options?: Partial<PublicConfiguration>) {
-	const {
-		data: profile,
-		error,
-		mutate,
-	} = useSWR('/profile', {
-		dedupingInterval: 3600 * 1000,
-		revalidateOnFocus: false,
-		...options,
-	})
+  const {
+    data: profile,
+    error,
+    mutate,
+  } = useSWR('/profile', {
+    dedupingInterval: 3600 * 1000,
+    revalidateOnFocus: false,
+    ...options,
+  })
 
-	const firstLoading = profile === undefined && error === undefined
+  const firstLoading = profile === undefined && error === undefined
 
-	async function login() {
-		await authApi.login({
-			username: 'nghiepbv2',
-			password: '20121991',
-		})
+  async function login() {
+    await authApi.login({
+      username: 'nghiepbv2',
+      password: '20121991',
+    })
 
-		await mutate()
-	}
+    await mutate()
+  }
 
-	async function logout() {
-		await authApi.logout()
-		mutate({} || null, false)
-	}
+  async function logout() {
+    await authApi.logout()
+    mutate({} || null, false)
+  }
 
-	return {
-		profile: profile as IUserInfo,
-		error,
-		login,
-		logout,
-		firstLoading,
-	}
+  return {
+    profile: profile as IUserInfo,
+    error,
+    login,
+    logout,
+    firstLoading,
+  }
 }

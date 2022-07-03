@@ -1,14 +1,14 @@
-import { NextPage } from 'next';
-import { AppProps } from 'next/app';
-import { ReactElement, ReactNode } from 'react';
+import { NextPage } from 'next'
+import { AppProps } from 'next/app'
+import { ReactElement, ReactNode } from 'react'
 
 export interface ILayoutProps {
-	children?: ReactNode;
+  children?: ReactNode
 }
 export type NextPageWithLayout = NextPage & {
-	Layout?: (props: ILayoutProps) => ReactElement;
-};
+  Layout?: (props: ILayoutProps) => ReactElement
+}
 
 export type AppPropsWithLayout = AppProps & {
-	Component: NextPageWithLayout;
-};
+  Component: NextPageWithLayout
+}

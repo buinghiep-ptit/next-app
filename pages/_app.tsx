@@ -12,23 +12,32 @@ import { theme, createEmotionCache } from '@/utils'
 const clientSideEmotionCache = createEmotionCache()
 
 interface AppProps extends AppPropsWithLayout {
-	emotionCache?: EmotionCache
+  emotionCache?: EmotionCache
 }
 
-function App({ Component, pageProps, emotionCache = clientSideEmotionCache }: AppProps) {
-	const Layout = Component.Layout ?? EmptyLayout
-	return (
-		<CacheProvider value={emotionCache}>
-			<ThemeProvider theme={theme}>
-				<CssBaseline />
-				<SWRConfig value={{ fetcher: (url) => axiosClient.get(url), shouldRetryOnError: false }}>
-					<Layout>
-						<Component {...pageProps} />
-					</Layout>
-				</SWRConfig>
-			</ThemeProvider>
-		</CacheProvider>
-	)
+function App({
+  Component,
+  pageProps,
+  emotionCache = clientSideEmotionCache,
+}: AppProps) {
+  const Layout = Component.Layout ?? EmptyLayout
+  return (
+    <CacheProvider value={emotionCache}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <SWRConfig
+          value={{
+            fetcher: url => axiosClient.get(url),
+            shouldRetryOnError: false,
+          }}
+        >
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </SWRConfig>
+      </ThemeProvider>
+    </CacheProvider>
+  )
 }
 
 export default App

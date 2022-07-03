@@ -2,7 +2,7 @@ import { MainLayout } from '@/component/layout'
 import { NextPageWithLayout } from '@/models/common'
 import { Box } from '@mui/material'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const Home: NextPageWithLayout = () => {
   const x = 'add'

@@ -7,6 +7,7 @@
     "plugin:import/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
+    // "plugin:unicorn/recommended",
     "plugin:prettier/recommended",
     "prettier"
   ],
@@ -26,8 +27,14 @@
       }
     ],
     "react/jsx-filename-extension": [0, { "extensions": [".tsx"] }],
+    "react-hooks/rules-of-hooks": "error",
     "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-empty-interface": "off"
+    "@typescript-eslint/no-empty-interface": "off",
+    "unicorn/no-array-for-each": "off",
+    "unicorn/no-array-reduce": "off",
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/no-null": "off",
+    "unicorn/consistent-function-scoping": "off"
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {

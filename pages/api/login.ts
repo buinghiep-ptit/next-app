@@ -50,10 +50,11 @@ export default function handler(
           ;(res as NextApiResponse)
             .status(200)
             .json({ message: 'login successfully' })
-        } catch (error) {
+        } catch {
           ;(res as NextApiResponse)
             .status(500)
             .json({ message: 'something went wrong' })
+          reject()
         }
 
         resolve(true)

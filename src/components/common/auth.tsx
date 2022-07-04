@@ -1,4 +1,3 @@
-import { IUserInfo } from '@/models/auth'
 import { useAuth } from 'hooks'
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'

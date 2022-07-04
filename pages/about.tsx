@@ -1,21 +1,17 @@
-import { AdminLayout, MainLayout } from '@/component/layout'
-import dynamic from 'next/dynamic'
+import { Header } from '@/component/common'
+import { AdminLayout } from '@/component/layout'
+import { Box, Button, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import { Box, Button, Typography } from '@mui/material'
-import { Header } from '@/component/common'
 
 // const DynamicHeader = dynamic(() => import('@/component/common').then((m) => m.Header), {
 // 	ssr: true,
 // })
-
-export interface IAboutPageProps {}
-
-export default function AboutPage(props: IAboutPageProps) {
+export default function AboutPage() {
   const [postList, setPostList] = useState([])
   const router = useRouter()
 
-  console.log('About query: ', router.query)
+  console.log('About query:', router.query)
 
   const page = router.query?.page
 

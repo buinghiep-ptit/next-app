@@ -1,11 +1,8 @@
-import { authApi } from 'apis'
 import { useAuth } from 'hooks'
 import { useRouter } from 'next/router'
 import React from 'react'
 
-export interface ILoginPageProps {}
-
-export default function LoginPage(props: ILoginPageProps) {
+export default function LoginPage() {
   const router = useRouter()
   const { profile, login, logout } = useAuth({
     revalidateOnMount: false,
@@ -17,7 +14,7 @@ export default function LoginPage(props: ILoginPageProps) {
       router.push('/about')
       console.log('redirect to dashboard')
     } catch (error) {
-      console.log('failed to login: ', error)
+      console.log('failed to login:', error)
     }
   }
   // const handleGetProfileClick = async () => {
@@ -32,7 +29,7 @@ export default function LoginPage(props: ILoginPageProps) {
       await logout()
       console.log('redirect to login page')
     } catch (error) {
-      console.log('failed to logout: ', error)
+      console.log('failed to logout:', error)
     }
   }
 

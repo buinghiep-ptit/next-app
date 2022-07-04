@@ -1,8 +1,8 @@
+import { Footer, Header } from '@/component/common'
 import { ILayoutProps } from '@/models/index'
 import { Box, Stack } from '@mui/material'
 import Link from 'next/link'
 import React, { useEffect } from 'react'
-import { Footer, Header } from '@/component/common'
 
 export interface IMainLayoutProps {}
 
@@ -15,7 +15,6 @@ export function MainLayout({ children }: ILayoutProps) {
   return (
     <Stack minHeight="100vh">
       <Header />
-
       <Box component="main" flexGrow={1}>
         <Link href={'/'}>
           <a>Home</a>

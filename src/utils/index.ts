@@ -1,2 +1,2 @@
-export * from './createEmotionCache'
+export * from './create-emotion-cache'
 export * from './theme'

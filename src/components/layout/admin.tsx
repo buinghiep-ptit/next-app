@@ -15,7 +15,9 @@ export function AdminLayout({ children }: ILayoutProps) {
     try {
       await logout()
       router.push('/login')
-    } catch (error) {}
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (

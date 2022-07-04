@@ -1,9 +1,7 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 
-export interface IPostDetailParamsProps {}
-
-export default function PostDetailParamsPage(props: IPostDetailParamsProps) {
+export default function PostDetailParamsPage() {
   const router = useRouter()
 
   return (

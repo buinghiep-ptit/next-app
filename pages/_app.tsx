@@ -1,8 +1,8 @@
 import '../styles/globals.css'
-import { EmptyLayout } from '@/component/layout'
+import { EmptyLayout } from '@/components/layout'
 import { AppPropsWithLayout } from '@/models/common'
 import { SWRConfig } from 'swr'
-import axiosClient from 'apis/axios-client'
+import axiosClient from '@/api-client/axios-client'
 
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'

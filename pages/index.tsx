@@ -1,8 +1,9 @@
-import { MainLayout } from '@/component/layout'
+import { MainLayout } from '@/components/layout'
 import { HeroSection, RecentPosts } from '@/components/home'
 import { NextPageWithLayout } from '@/models/common'
 import { Box } from '@mui/material'
 import { useRouter } from 'next/router'
+import { FeaturesWorks } from '@/components/home/featured-works'
 
 const Home: NextPageWithLayout = () => {
   const x = 'add'
@@ -23,6 +24,7 @@ const Home: NextPageWithLayout = () => {
     <Box>
       <HeroSection />
       <RecentPosts />
+      <FeaturesWorks />
     </Box>
   )
 }

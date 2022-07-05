@@ -1,7 +1,7 @@
-import { authApi } from '@/apis'
+import { authApi } from '@/api-client'
 import useSWR from 'swr'
 import { PublicConfiguration } from 'swr/dist/types'
-import { IUserInfo } from '@/models/index'
+import { IUserInfo } from '@/models'
 
 export function useAuth(options?: Partial<PublicConfiguration>) {
   const {

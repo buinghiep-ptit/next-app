@@ -19,12 +19,12 @@
     "baseUrl": "./src",
     "paths": {
       "@/*": ["./*"],
-      "@/component/*": ["./components/*"],
-      "@/models/*": ["./models/*"],
-      "@/apis": ["./apis/index.ts"],
-      "@/apis/*": ["./apis/*"],
-      "@/assets/*": ["./assets/*"],
-      "@/hooks/*": ["./hooks/*"]
+      // "@/component/*": ["./components/*"],
+      // "@/models/*": ["./models/*"],
+      "@/api": ["./api-client/index.ts"],
+      "@/api/*": ["./api-client/*"]
+      // "@/assets/*": ["./assets/*"],
+      // "@/hooks/*": ["./hooks/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

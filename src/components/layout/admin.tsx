@@ -1,4 +1,4 @@
-import { ILayoutProps } from '@/models/index'
+import { ILayoutProps } from '@/models'
 import { useAuth } from 'hooks'
 import Link from 'next/link'
 import { useRouter } from 'next/router'

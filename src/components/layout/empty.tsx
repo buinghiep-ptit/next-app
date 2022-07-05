@@ -1,4 +1,4 @@
-import { ILayoutProps } from '@/models/index'
+import { ILayoutProps } from '@/models'
 import * as React from 'react'
 
 export interface IEmptyLayoutProps {}

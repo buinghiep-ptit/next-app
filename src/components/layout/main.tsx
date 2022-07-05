@@ -1,5 +1,5 @@
-import { Footer, Header } from '@/component/common'
-import { ILayoutProps } from '@/models/index'
+import { Footer, Header } from '@/components/common'
+import { ILayoutProps } from '@/models'
 import { Box, Stack } from '@mui/material'
 import Link from 'next/link'
 import React, { useEffect } from 'react'

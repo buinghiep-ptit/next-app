@@ -1,4 +1,4 @@
-import { ILoginPayload } from '@/models/index'
+import { ILoginPayload } from '@/models'
 import axiosClient from './axios-client'
 
 export const authApi = {

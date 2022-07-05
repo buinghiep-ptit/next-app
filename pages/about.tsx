@@ -1,5 +1,5 @@
-import { Header } from '@/component/common'
-import { AdminLayout } from '@/component/layout'
+import { Header } from '@/components/common'
+import { AdminLayout } from '@/components/layout'
 import { Box, Button, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'

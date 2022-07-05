@@ -16,7 +16,7 @@ export function MainLayout({ children }: ILayoutProps) {
     <Stack minHeight="100vh">
       <Header />
       <Box component="main" flexGrow={1}>
-        <Link href={'/'}>
+        {/* <Link href={'/'}>
           <a>Home</a>
         </Link>
         <Link href={'/blog'}>
@@ -24,7 +24,7 @@ export function MainLayout({ children }: ILayoutProps) {
         </Link>
         <Link href={'/works'}>
           <a>Works</a>
-        </Link>
+        </Link> */}
         {children}
       </Box>
 

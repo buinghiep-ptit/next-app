@@ -23,6 +23,7 @@
       "@/models/*": ["./models/*"],
       "@/apis": ["./apis/index.ts"],
       "@/apis/*": ["./apis/*"],
+      "@/assets/*": ["./assets/*"],
       "@/hooks/*": ["./hooks/*"]
     }
   },

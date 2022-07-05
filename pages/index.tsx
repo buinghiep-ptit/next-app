@@ -1,4 +1,5 @@
 import { MainLayout } from '@/component/layout'
+import { HeroSection, RecentPosts } from '@/components/home'
 import { NextPageWithLayout } from '@/models/common'
 import { Box } from '@mui/material'
 import { useRouter } from 'next/router'
@@ -18,7 +19,12 @@ const Home: NextPageWithLayout = () => {
     })
   }
 
-  return <Box>Home Page</Box>
+  return (
+    <Box>
+      <HeroSection />
+      <RecentPosts />
+    </Box>
+  )
 }
 
 Home.Layout = MainLayout

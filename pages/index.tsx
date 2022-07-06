@@ -4,6 +4,7 @@ import { NextPageWithLayout } from '@/models/common'
 import { Box } from '@mui/material'
 import { useRouter } from 'next/router'
 import { FeaturesWorks } from '@/components/home/featured-works'
+import { Seo } from '@/components/common/seo'
 
 const Home: NextPageWithLayout = () => {
   const x = 'add'
@@ -22,6 +23,15 @@ const Home: NextPageWithLayout = () => {
 
   return (
     <Box>
+      <Seo
+        data={{
+          title: 'NextJS | Nghiepbv',
+          url: 'https://next-app-pink-six.vercel.app/',
+          description: 'Simple Step by step building website using nextjs',
+          thumbnailUrl:
+            'https://soshace.com/wp-content/uploads/2019/10/Getting-Started-with-NextJS.jpg',
+        }}
+      />
       <HeroSection />
       <RecentPosts />
       <FeaturesWorks />

@@ -49,7 +49,7 @@
       }
     ]
   },
-  "ignorePatterns": ["src/assets/*", "next.config.js"],
+  "ignorePatterns": ["src/assets/*", "**/*.config.js"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json"

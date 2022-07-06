@@ -10,12 +10,8 @@ export function HeaderDesktop() {
   const router = useRouter()
   return (
     <Box display={{ xs: 'none', md: 'block' }} py={2}>
-      <Container sx={{ bgcolor: 'red' }}>
-        <Stack
-          sx={{ bgcolor: 'yellow' }}
-          direction="row"
-          justifyContent="flex-end"
-        >
+      <Container>
+        <Stack direction="row" justifyContent="flex-end">
           {ROUTE_LIST.map(route => (
             <Link key={route.path} href={route.path} passHref>
               <MuiLink

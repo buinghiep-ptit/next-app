@@ -27,7 +27,7 @@ export async function getBlogList(): Promise<IBlog[]> {
         avatarUrl: data.author_image_url,
       },
       tagList: data.tags,
-      publishedDate: Date.now(),
+      publishedDate: 1656990666,
       description: excerpt,
       mdContent: content,
     })

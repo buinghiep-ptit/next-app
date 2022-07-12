@@ -23,8 +23,8 @@ export function HeroSection(props: IHeroSectionProps) {
               fontWeight={'bold'}
               mb={{ xs: 3.5, md: 4.5 }}
             >
-              Hi, I am John, <br />
-              Creative Technologist
+              Hi, I am Nghiep, <br />
+              Creative Web-app
             </Typography>
             <Typography mb={{ xs: 3.5, md: 4.5 }}>
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do

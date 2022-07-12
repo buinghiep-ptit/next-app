@@ -19,6 +19,7 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>,
 ) {
+  console.log('aaaa')
   return new Promise((resolve, reject) => {
     //convert cookies to header Authorization
     const cookies = new Cookies(req, res)
@@ -28,9 +29,9 @@ export default function handler(
     }
 
     //don't send cookies to API server
-    req.headers.cookie = ''
+    // req.headers.cookie = ''
     const option = {
-      target: process.env.API_URL,
+      target: process.env.API_APP_URL,
       changeOrigin: true,
       selfHandleResponse: false,
     }

@@ -6,10 +6,30 @@ import { useRouter } from 'next/router'
 import { FeaturesWorks } from '@/components/home/featured-works'
 import { Seo } from '@/components/common/seo'
 
-const Home: NextPageWithLayout = () => {
-  const x = 'add'
-  console.log(x)
+import {
+  dehydrate,
+  DehydratedState,
+  QueryClient,
+  useQuery,
+  UseQueryResult,
+} from 'react-query'
+import { fetchPerson, postsApi } from '@/api-client'
+import { IPost } from '@/models'
+import { GetStaticProps } from 'next'
+
+const Home: NextPageWithLayout = ({}) => {
   const router = useRouter()
+
+  const {
+    data,
+    isLoading,
+    isFetching,
+    isError,
+    error,
+  }: UseQueryResult<IPost[], Error> = useQuery<IPost[], Error>(
+    ['posts'],
+    fetchPerson,
+  )
 
   function goToDetailPage() {
     router.push({
@@ -20,6 +40,10 @@ const Home: NextPageWithLayout = () => {
       },
     })
   }
+
+  console.log(isLoading, isFetching, data?.length)
+
+  if (isLoading) return <h1>Loading...</h1>
 
   return (
     <Box>
@@ -37,6 +61,21 @@ const Home: NextPageWithLayout = () => {
       <FeaturesWorks />
     </Box>
   )
+}
+
+export const getStaticProps: GetStaticProps<any> = async (): Promise<{
+  props: {
+    dehydratedState: DehydratedState
+  }
+}> => {
+  const queryClient = new QueryClient()
+  await queryClient.prefetchQuery(['posts'], fetchPerson)
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  }
 }
 
 Home.Layout = MainLayout

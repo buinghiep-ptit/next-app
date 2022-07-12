@@ -13,7 +13,7 @@ export interface IBlogListPage {
 }
 
 export default function BlogListPage({ blogs }: IBlogListPage) {
-  console.log('blogs:', blogs)
+  console.log('blogs:', blogs.length)
   return (
     <Box>
       <Container>

@@ -1,7 +1,10 @@
 import axios from 'axios'
 
+const isServer = typeof window === 'undefined'
+console.log('isServer:', isServer)
+
 const axiosClient = axios.create({
-  baseURL: '/api',
+  baseURL: isServer ? `${process.env.API_APP_URL}/api` : '/api',
   headers: {
     'Content-Type': 'application/json',
   },
